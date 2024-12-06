@@ -64,7 +64,6 @@ public class Day03 implements Day {
         while (startInstructions.find()) {
             instructionSum += multiplyInstructions(startInstructions.group());
         }
-
         while (middleInstructions.find()) {
             instructionSum += multiplyInstructions(middleInstructions.group());
         }
