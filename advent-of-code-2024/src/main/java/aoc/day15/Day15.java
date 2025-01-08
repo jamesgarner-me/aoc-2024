@@ -22,7 +22,8 @@ public class Day15 implements Day {
         }
     }
 
-    private void initialise(List<String> lines) {
+    // Make initialise public for GUI
+    public void initialise(List<String> lines) {
 
         int size = lines.getFirst().length();
         this.warehouse = new char[size][size];
@@ -38,6 +39,8 @@ public class Day15 implements Day {
                 }
             }
         }
+
+        // printWarehouse();
 
         // parse moves
         this.moves = new ArrayList<>();
@@ -73,7 +76,7 @@ public class Day15 implements Day {
         this.warehouse[this.robotRow][this.robotCol] = '@';
     }
 
-    private void moveRobotCheck(int rowOffset, int colOffset) {
+    public void moveRobotCheck(int rowOffset, int colOffset) {
 
         int newRow = this.robotRow + rowOffset;
         int newCol = this.robotCol + colOffset;
@@ -174,6 +177,15 @@ public class Day15 implements Day {
         }
 
         return Integer.toString(gpsCoordSum);
+    }
+
+    // Getter methods for GUI
+    public char[][] getWarehouse() {
+        return this.warehouse;
+    }
+
+    public ArrayList<Character> getMoves() {
+        return this.moves;
     }
 
     @Override
